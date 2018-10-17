@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+	<link href="images/favicon.png" rel="shortcut icon" type="image/png" />
+	<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+	<title> 竹好機器人 </title>
+
+	<script src="js/jquery.js"></script>
+</head>
+<body>
+	<div id="header-wrapper">
+		<div id="header" class="container">
+			<div id="logo">
+				<a href="index.html"><img src="images/logo.png" alt="竹好機器人" width="480"></a></h1>
+				<div id="menu">
+					<ul>
+						<li class="current_page_item"><a href="index.html" accesskey="1" title="">首頁</a></li>
+						<li><a href="#" accesskey="5" title="">聯絡我們</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="page-wrapper">
+		<div id="page" class="container">
+			<div class="title">
+				<h2>歡迎光臨 竹好機器人！</h2>
+			</div>
+			<p>你好，我是<strong>小竹同學</strong><img src="images/favicon.png" alt="竹好機器人icon" style="position: relative; top: 4px;">。<br>我這邊有提供許多服務，不介意的話歡迎親自操作看看喔。</p>
+			<p style="padding-top: 20px; user-select: none;">《向下滑動以查看更多資訊》</p>
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<div id="portfolio" class="container">
+			<h1>商品列表</h1>
+			<div class="column1">
+				<div id="item1" class="box">
+					<img src="images/bamboo_charcoal_tea_bowl_group.jpg" alt="" class="image image-full" />
+					<h3>竹炭陶茶碗組</h3>
+					<p>$<span>4,200</span>/組</p>
+					<input class="amount" type="number" name="" value="0" min="0">
+					<a onclick="addToCart(1)" class="button button-small">放入購物車</a>
+				</div>
+			</div>
+			<div class="column2">
+				<div id="item2" class="box">
+					<img src="images/paul_green_mugs.jpg" alt="" class="image image-full" />
+					<h3>竹炭陶馬克杯</h3>
+					<p>$<span>1,200</span>/個</p>
+					<input class="amount" type="number" name="" value="0" min="0">
+					<a onclick="addToCart(2)" class="button button-small">放入購物車</a>
+				</div>
+			</div>
+			<div class="column3">
+				<div id="item3" class="box">
+					<img src="images/blessing_cup.jpg" alt="" class="image image-full" />
+					<h3>惜福杯</h3>
+					<p>$<span>400</span>/個</p>
+					<input class="amount" type="number" name="" value="0" min="0">
+					<a onclick="addToCart(3)" class="button button-small">放入購物車</a>
+				</div>
+			</div>
+			<div class="column4">
+				<div id="item4" class="box">
+					<img src="images/thanksgiving_cup.jpg" alt="" class="image image-full" />
+					<h3>感恩杯</h3>
+					<p>$<span>400</span>/個</p>
+					<input class="amount" type="number" name="" value="0" min="0">
+					<a onclick="addToCart(4)" class="button button-small">放入購物車</a>
+				</div>
+			</div>
+			<div class="column1">
+				<div id="item5" class="box">
+					<img src="images/green_tableware.jpg" alt="" class="image image-full" />
+					<h3>保青餐具組</h3>
+					<p>$<span>480</span>/組</p>
+					<input class="amount" type="number" name="" value="0" min="0">
+					<a onclick="addToCart(5)" class="button button-small">放入購物車</a>
+				</div>
+			</div>
+			<div class="column2">
+				<div id="item6" class="box">
+					<img src="images/hairpin.jpg" alt="" class="image image-full" />
+					<h3>髮簪</h3>
+					<p>$<span>420</span>/個</p>
+					<input class="amount" type="number" name="" value="0" min="0">
+					<a onclick="addToCart(6)" class="button button-small">放入購物車</a>
+				</div>
+			</div>
+			<div class="column3">
+				<div id="item7" class="box">
+					<img src="images/bamboo_charcoal_peanuts.jpg" alt="" class="image image-full" />
+					<h3>竹炭花生</h3>
+					<p>$<span>150</span>/包</p>
+					<input class="amount" type="number" name="" value="0" min="0">
+					<a onclick="addToCart(7)" class="button button-small">放入購物車</a>
+				</div>
+			</div>
+			<div class="column4">
+				<div id="item8" class="box">
+					<img src="images/chopsticks.jpg" alt="" class="image image-full" />
+					<h3>保青竹筷</h3>
+					<p>$<span>400</span>/雙</p>
+					<input class="amount" type="number" name="" value="0" min="0">
+					<a onclick="addToCart(8)" class="button button-small">放入購物車</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="wrapper2">
+		<h1>購物車清單</h1>
+		<form id="cart">
+			<table>
+				<thead>
+					<tr>
+						<th class="text-left">品項</th>
+						<th class="text-right" style="width: 130px;">單價(元)</th>
+						<th class="text-right" style="width: 50px;">數量</th>
+						<th class="text-right" style="width: 130px;">總價(元)</th>
+						<th class="text-center" style="width: 60px;"></th>
+					</tr>
+				</thead>
+
+				<tbody>
+				</tbody>
+			</table>
+
+			<div class="goCheckout">
+				<h1 style="display: block;" class="text-center"> 尚無資料 </h1>
+				<div style="display: none;">
+					<p style="padding-right: 88px;">
+						<span id="totalPrice">$0</span>
+					</p>
+					<a onclick="checkout()" class="button button-small">去結帳</a>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="checkout" style="display: none;">
+		<div class="text-center">
+			<h1> 確定結帳 <span class="icon-cross" onclick="uncheckout();"> x </span> </h1>
+			<p> 請將卡片放至讀卡機上以結帳。 </p>
+			<p><strong> 總金額： <span></span> 元 </strong></p>
+			<input type="text" id="cardId" name="cardId" placeholder="請輸入卡號" required>
+			<a onclick="cartSubmit();" class="button button-small">結帳</a>
+		</div>
+	</div>
+
+	<div class="boxLoading" style="display: none;">
+		<div></div>
+	</div>
+
+	<div id="copyright" class="container">
+		<p>Copyright &copy; 2018 國立中正大學. All rights reserved.</p>
+		<ul class="contact">
+			<li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+			<li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
+			<li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
+			<li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
+			<li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
+		</ul>
+	</div>
+
+	<script>
+		$(document).ready(function () {
+			$('#cardId').keydown(function () {
+				if ($('#cardId').val().length >= 10)
+					cartSubmit();
+			});
+		});
+
+		// 新增購物車資料列
+		function addToCart(id) {
+			// 取得產品資訊
+			let product = {
+				name: $('#item' + id + ' > h3').text(),
+				price: parseInt($('#item' + id + ' > p > span').text().replace(/,/g, '')),
+				number: parseInt($('#item' + id + ' > input[type="number"]').val())
+			};
+
+			// 有商品數量才執行動作
+			if (product.number > 0) {
+
+				// 如果購物車有資料則隱藏「尚無資料」區域
+				$('.goCheckout > h1').hide();
+				$('.goCheckout > div').show();
+
+				// 如果項目已經存在
+				if ($('tr#row' + id).length) {
+					let ori = {
+						price: parseInt($('tr#row' + id + ' > td').eq(1).text()),
+						number: parseInt($('tr#row' + id + ' > td').eq(2).text())
+					}
+
+					let newNumber = product.number + ori.number;
+
+					$('tr#row' + id + ' > td').eq(2).text(newNumber);
+					$('tr#row' + id + ' > td').eq(3).text(format(ori.price * newNumber));
+				}
+				// 如果項目還不存在
+				else {
+					let data = `<tr id="row${ id }" class="row">
+									<td> ${ product.name } </td>
+									<td class="text-right"> ${ format(product.price) } </td>
+									<td class="text-right"> ${ product.number } </td>
+									<td class="text-right"> ${ format(product.price * product.number) } </td>
+									<td>
+										<a class="btn-del" onclick="removeRow(${id})">取消</a>
+									</td>
+								</tr>`;
+
+					// 新增資料列到購物車清單
+					$('#cart tbody').append(data);
+				}
+
+				// 把「數量」欄位清空
+				$('#item' + id + ' > input[type="number"]').val('0');
+
+				calculatePrice();
+
+			}
+		}
+
+		// 計算總金額
+		function calculatePrice() {
+			let countRow = $('tr.row').length;
+			let total = 0;
+			
+			// 把求得的總金額丟到變數 total 裡
+			for (let i = 0; i < countRow; i++) {
+				total += parseInt($('tbody > tr.row').eq(i).find('td').eq(3).text().replace(/,/g, ''));
+			}
+
+			// 顯示總金額
+			$('.goCheckout #totalPrice').text(format(total, '$ '));
+		}
+
+		// 執行結帳動作
+		function cartSubmit() {
+			$('.boxLoading').show();
+
+			// 取得純數字的 totalPrice
+			let totalPricePre1 = $('.checkout > div > p > strong > span').text().replace(/,/g, '');
+			let totalPricePre2 = '';
+			for (let i = 2; i < totalPricePre1.length; i++) {
+				totalPricePre2 += totalPricePre1[i];
+			}
+
+			let cardId = $('#cardId').val();
+			let totalPrice = parseInt(totalPricePre2);
+
+			if (cardId === '' || totalPrice === 0) {
+				alert('資料輸入出錯。')
+				$('.boxLoading').hide();
+			}
+			else {
+				$.ajax({
+		            url: "checkout.php",
+		            method: "POST",
+		            data: {
+		                cardId: cardId,
+		                totalPrice: totalPrice
+		            },
+		            complete: function () {
+		                $('.boxLoading').hide();
+		            },
+		            success: function (res) {
+		                alert(res);
+		                location.reload();
+		            },
+		            fail: function(res){
+						alert(res);
+				    }
+		        });
+			}
+		}
+
+		// 去刷卡結帳
+		function checkout() {
+			$('.checkout').show();
+			$('.checkout > div > p > strong > span').text($('#totalPrice').text());
+			$('#cardId').focus();
+		}
+
+		function uncheckout() {
+			$('.checkout').hide();
+		}
+
+		// 價錢格式化
+		function format(num, currency='') {
+			return currency + num.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
+		}
+
+		// 移除購物車資料列
+		function removeRow(id) {
+			$('#cart tbody tr#row' + id).remove();
+
+			calculatePrice();
+
+			// 如果購物車沒有資料則隱藏送出區域
+			if ($('#cart tbody').text().trim() === '') {
+				$('.goCheckout > h1').show();
+				$('.goCheckout > div').hide();
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+
+	<title>Yu-Gi-Oh Seller</title>
+
+	<link href="images/favicon.png" rel="shortcut icon" type="image/png" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+	<header id="header">
+		<a class="logo" href="index.html">Yu-Gi-Oh Seller</a>
+	</header>
+
+	<section id="banner">
+		<div class="inner">
+			<img src="images/title.png" alt="title">
+			<p>
+				我們這裡有：遊戲王商品的販售、收購、效果規則查詢、提供大量遊戲王卡選購。
+			</p>
+		</div>
+	</section>
+
+	<section class="wrapper">
+		<div class="inner">
+			<header class="special">
+				<h2>商品區</h2>
+				<p>
+					本區提供玩家加強牌組，歡迎大量選購。
+				</p>
+			</header>
+			<div class="highlights">
+				<section id="product0" class="product">
+					<div class="content">
+						<header>
+							<img src="images/product0.png" alt="復刻新手卡包">
+						</header>
+						<h2 class="name">
+							復刻新手卡包
+						</h2>
+						<p>
+							$ <strong class="price">150</strong> NTD
+
+							<span onclick="toCheckout(0)">購買</span>
+						</p>
+					</div>
+				</section>
+				<section id="product1" class="product">
+					<div class="content">
+						<header>
+							<img src="images/product1.png" alt="惡毒入侵卡包">
+						</header>
+						<h2 class="name">
+							惡毒入侵卡包
+						</h2>
+						<p>
+							$ <strong class="price">170</strong> NTD
+
+							<span onclick="toCheckout(1)">購買</span>
+						</p>
+					</div>
+				</section>
+				<section id="product2" class="product">
+					<div class="content">
+						<header>
+							<img src="images/product2.png" alt="閃耀勝利卡包 I、II">
+						</header>
+						<h2 class="name">
+							閃耀勝利卡包 I、II
+						</h2>
+						<p>
+							$ <strong class="price">250</strong> NTD
+
+							<span onclick="toCheckout(2)">購買</span>
+						</p>
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
+
+	<footer id="footer">
+		<div class="inner">
+			<div class="copyright">
+				Copyright &copy; 2018 <a href="http://www.ccu.edu.tw">CCU</a>. All rights reserved.
+			</div>
+		</div>
+	</footer>
+
+	<div class="checkout" style="display: none;">
+		<div>
+			<h1 class="text-center" style="font-weight: bold;"> 確定結帳 </h1>
+			<div id="sure-checkout">
+				<div class="img"></div>
+				<div class="details">
+					<h2>
+						<div class="name" style="font-weight: bold;"></div>
+						<div>總金額：$<strong class="price"></strong>元</div>
+					</h2>
+					<h2>
+						<input type="text" id="cardId" name="cardId" placeholder="請輸入卡號" required>
+					</h2>
+					<ul class="actions" style="margin-bottom: 0;">
+						<li>
+							<a onclick="checkout();" class="button sure">結帳</a>
+						</li>
+						<li>
+							<a onclick="uncheckout();" class="button">取消</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="box-loading" style="display: none;">
+		<div></div>
+	</div>
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#cardId').keyup(function () {
+				if ($('#cardId').val().length >= 10)
+					checkout();
+			});
+		});
+
+		function toCheckout(id) {
+			let name = $('#product' + id + ' .name').text();
+			let price = $('#product' + id + ' .price').text();
+			let img = `<img src="images/product${id}.png" alt="${name}">`;
+
+			$('#sure-checkout .img').html(img);
+			$('#sure-checkout .name').html(name);
+			$('#sure-checkout .price').html(price);
+
+			$('.checkout').show();
+			$('#cardId').focus();
+		}
+
+		function uncheckout() {
+			$('.checkout').hide();
+		}
+
+		function checkout() {
+			$('.box-loading').show();
+
+			let cardId = $('#cardId').val();
+			let price = $('#sure-checkout .price').text();
+
+			if (cardId === '') {
+				alert('資料輸入出錯。')
+				$('.boxLoading').hide();
+			}
+			else {
+				$.ajax({
+					url: "checkout.php",
+					method: "POST",
+					data: {
+						card_id: cardId,
+						price: price,
+						city: 'Tokyo',
+						store_id: 100002,
+						machine_id: 200002
+					},
+					complete: function () {
+						$('.box-loading').hide();
+					},
+					success: function (res) {
+						alert(res);
+						location.reload();
+					},
+					fail: function(res){
+						alert(res);
+					}
+				});
+			}
+		}
+	</script>
+</body>
+</html>

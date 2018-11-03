@@ -1,9 +1,9 @@
 ﻿<?php
 // 資料庫連線
-$server = "localhost"; 
-$user = "root";
+$server = ""; 
+$user = "";
 $password = "";
-$db = "bamboo";
+$db = "";
 $conn = new mysqli($server, $user, $password, $db);
 if ($conn->connect_error) {
 

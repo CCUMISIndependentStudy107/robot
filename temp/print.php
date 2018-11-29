@@ -3,9 +3,6 @@
     <title> testing </title>
     <h1> test </h1>
     <body>
-    <script>
-        <button onClick="window.print()">Print this page</button>
-    </script>
     <form method = "post">
         <input type = "submit" name = "test" id = "itest">
     </form>

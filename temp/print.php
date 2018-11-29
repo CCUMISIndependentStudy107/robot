@@ -3,7 +3,9 @@
     <title> testing </title>
     <h1> test </h1>
     <body>
-    
+    <script>
+        <button onClick="window.print()">Print this page</button>
+    </script>
     <form method = "post">
         <input type = "submit" name = "test" id = "itest">
     </form>
@@ -12,11 +14,12 @@
         function myPrint($str){
             $printer = "WP-K617 Ver.3.10";  
             $ph = printer_open($printer); 
-            // $content = "­n¥ÎBIG5½s½X!!";
+            // $content = "ï¿½nï¿½ï¿½BIG5ï¿½sï¿½X!!";
             printer_write($ph, $str);
             printer_close($ph);
         }
-        if(array_key_exists('test',$_POST)){
+
+        if(isset($_POST)){
             $file = "test.txt";
             $f = fopen($file,"r");
             $str = "";

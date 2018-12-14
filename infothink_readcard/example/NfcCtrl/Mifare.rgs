@@ -1,0 +1,27 @@
+HKCR
+{
+	NfcCtrl.Mifare.1 = s 'Mifare Class'
+	{
+		CLSID = s '{A3E680E6-5D6F-460A-930A-D422A0F0379D}'
+	}
+	NfcCtrl.Mifare = s 'Mifare Class'
+	{
+		CLSID = s '{A3E680E6-5D6F-460A-930A-D422A0F0379D}'
+		CurVer = s 'NfcCtrl.Mifare.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {A3E680E6-5D6F-460A-930A-D422A0F0379D} = s 'Mifare Class'
+		{
+			ProgID = s 'NfcCtrl.Mifare.1'
+			VersionIndependentProgID = s 'NfcCtrl.Mifare'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{7703AB2A-4107-4E27-A11C-2E3A0A75D072}'
+		}
+	}
+}

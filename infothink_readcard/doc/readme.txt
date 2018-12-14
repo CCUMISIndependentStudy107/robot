@@ -1,0 +1,4 @@
+- InfoThink WinNfc API v1.7x: InfoThink NFC 讀卡機軟體介面開發文件
+- MIFARE Classic 1K/4K:    Mifare 1K/4K 卡片規格文件
+- MIFARE Ultralight:       MIFARE Ultralight 卡片規格文件
+- ISOIEC 14443-4:          ISO14443-4規格文件

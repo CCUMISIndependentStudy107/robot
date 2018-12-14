@@ -1,0 +1,38 @@
+// NfcCtrl.idl : NfcCtrl 的 IDL 來源
+//
+
+// 這個檔案會由 MIDL 工具處理
+// 以產生型別程式庫 (NfcCtrl.tlb) 和封送處理程式碼。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(013B1394-97CA-4646-AFD0-16467F1F0204),
+	dual,
+	nonextensible,
+	helpstring("IMifare 介面"),
+	pointer_default(unique)
+]
+interface IMifare : IDispatch{
+	[id(1), helpstring("方法 ReadCard")] HRESULT ReadCard([out,retval] LONG* Return);
+	[propget, id(2), helpstring("屬性 CardID")] HRESULT CardID([out, retval] BSTR* pVal);
+};
+[
+	uuid(7703AB2A-4107-4E27-A11C-2E3A0A75D072),
+	version(1.0),
+	helpstring("NfcCtrl 1.0 型別程式庫")
+]
+library NfcCtrlLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(A3E680E6-5D6F-460A-930A-D422A0F0379D),
+		helpstring("Mifare Class")
+	]
+	coclass Mifare
+	{
+		[default] interface IMifare;
+	};
+};

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="NfcCtrl_2008">
+</Property><Property Name="方案檔" Value="D:\NfcProj\NfcCtrl\NfcCtrl\NfcCtrl_2008.sln">
+</Property><Property Name="Date" Value="2010年8月10日">
+</Property><Property Name="Time" Value="下午 14:25:40">
+</Property></Properties><Event ErrorLevel="0" Project="NfcCtrl_2008" Source="NfcCtrl_2008.vcproj" Description="ATL Server 支援已從這一版 Visual Studio 中移除。若您的 ATL 專案使用任何 ATL Server 功能，您的專案可能無法建置。如需替代方式清單，請參閱 MSDN 說明文件。">
+</Event><Event ErrorLevel="0" Project="NfcCtrl_2008" Source="NfcCtrl_2008.vcproj" Description="不再支援 Web 部署到本機 IIS 伺服器。Web 部署工具已從您的專案設定中移除。">
+</Event><Event ErrorLevel="1" Project="NfcCtrl_2008" Source="NfcCtrl_2008.vcproj" Description="此應用程式已更新成包含與 Windows Vista 使用者帳戶控制 (UAC) 功能相關的設定。根據預設，在已啟用 UAC 的 Windows Vista 上執行時，此應用程式會標示為與啟動它的處理序具有相同權限。此標示也會使應用程式無法以虛擬化執行。您可以從專案的屬性頁變更 UAC 相關設定。">
+</Event><Event ErrorLevel="0" Project="NfcCtrl_2008" Source="NfcCtrl_2008.vcproj" Description="專案檔已成功備份為 'D:\NfcProj\NfcCtrl\NfcCtrl\NfcCtrl_2008.vcproj.8.00.old'。">
+</Event><Event ErrorLevel="0" Project="NfcCtrl_2008" Source="NfcCtrl_2008.vcproj" Description="專案升級成功。">
+</Event><Event ErrorLevel="3" Project="NfcCtrl_2008" Source="NfcCtrl_2008.vcproj" Description="Converted">
+</Event></UpgradeLog>

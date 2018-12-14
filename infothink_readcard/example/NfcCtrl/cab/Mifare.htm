@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<TITLE>ATL 3.0 test page for object Mifare</TITLE>
+</HEAD>
+<BODY>
+<OBJECT ID="Mifare" CLASSID="CLSID:A3E680E6-5D6F-460A-930A-D422A0F0379D" CODEBASE="NfcCtrl.cab#Version=1,4,0,0"></OBJECT>
+
+
+
+<script language="javascript">
+function TxnMoney(objThisUi, txn)
+{
+	var rc;
+	var money = 1;
+
+        rc = Mifare.ReadCard();
+		
+	if ( rc != 0 ) 
+	{		
+		ShowErrorMessage(rc);
+		return false;
+	}
+	else
+	{
+		alert("讀取卡號成功 \n卡號=" + Mifare.CardID);
+		
+		return false;
+	}
+}
+
+function ShowErrorMessage(rc)
+{
+	switch (rc)
+	{
+		case -2146435060:
+			alert("請放置卡片");
+			break;
+		case -2146435026:
+		    	alert("請安裝讀卡機");
+			break;
+		default:
+		  alert("系統錯誤(" + rc + ")");
+			break;
+	}
+}
+
+</SCRIPT>
+
+<!-- 註冊表單情形 -->         
+<FORM NAME="LoginForm" METHOD="POST" ACTION="VerifySignCAPI.asp">
+  <div align="center">
+    <center>
+  <table border="1" width="348" bordercolorlight="#FFFFFF" bordercolordark="#808080" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="91" bgcolor="#66CCFF">&nbsp;</td>
+      <td width="203" bgcolor="#66CCFF"> 悠遊購物商城
+      </td>
+    <tr>
+      <td width="91">店家:</td>
+      <td width="203">數位書攤
+      </td>
+    </tr>
+    <tr>
+      <td width="91">商品:</td> 
+      <td width="203">102期數位週刊立即看
+      </td>
+    </tr>
+    <tr>
+      <td width="91">價格:</td> 
+      <td width="203">99元
+      </td>
+    </tr>
+    <tr>
+      <td width="91">數量:</td> 
+      <td width="203">1本
+      </td>
+    </tr>    
+    <tr>
+      <td width="91">&nbsp;</td> 
+      <td width="203">     
+  	<INPUT TYPE = "submit" value = "讀取卡號" onClick = "return TxnMoney(LoginForm, 1)">
+      </td>
+    </tr>
+  </table>
+    </center>
+  </div>
+    
+</FORM>
+
+
+<!-- ************************************************************************************ -->
+
+</BODY>
+
+</HTML>

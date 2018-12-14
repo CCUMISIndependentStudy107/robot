@@ -1,1 +1,0 @@
-signcode\signcode.exe /spc signcode\mycert.spc /v signcode\mykey.pvk -n NFC¦w±±¤¸¥ó NfcCtrl.cab

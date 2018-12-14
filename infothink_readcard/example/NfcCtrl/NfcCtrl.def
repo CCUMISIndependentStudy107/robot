@@ -1,9 +1,0 @@
-; NfcCtrl.def : 宣告模組參數。
-
-LIBRARY      "NfcCtrl.DLL"
-
-EXPORTS
-	DllCanUnloadNow		PRIVATE
-	DllGetClassObject	PRIVATE
-	DllRegisterServer	PRIVATE
-	DllUnregisterServer	PRIVATE
